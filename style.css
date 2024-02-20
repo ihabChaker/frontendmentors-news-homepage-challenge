@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    --clr-primary-300: hsl(35, 77%, 62%);
+    --clr-primary-400: hsl(5, 85%, 63%);
+
+    --clr-neutral-300: hsl(36, 100%, 99%);
+    --clr-neutral-400: hsl(233, 8%, 79%);
+    --clr-neutral-500: hsl(236, 13%, 42%);
+    --clr-neutral-600: hsl(240, 100%, 5%);
+
+    --font-size-body: 15px;
+    --font-family: 'Inter', 'sans-serif';
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+}
+
+.clr-yellow {
+    color: var(--clr-primary-300);
+}
+
+.clr-white {
+    color: var(--clr-neutral-300);
+}
+
+.clr-gray-blue {
+    color: var(--clr-neutral-400);
+}
+
+.clr-dark-gray-blue {
+    color: var(--clr-neutral-500);
+}
+
+.clr-dark {
+    color: var(--clr-neutral-600);
+}
+
+.bg-orange {
+    background-color: var(--clr-primary-400);
+}
+
+.bg-dark {
+    background-color: var(--clr-neutral-600);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.fw-extra-bold {
+    font-weight: var(--fw-extra-bold)
+}
+
+.margin-block {
+    margin-block: 2rem;
+}
+
+body {
+    padding: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        padding: 6rem 11rem;
+    }
+}
+
+body {
+    font-size: var(--font-size-body);
+    font-family: var(--font-family);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.navigation-menu-list {
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width: 992px) {
+    .navigation-menu-list {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+#icon-close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+@media screen and (min-width: 992px) {
+
+    #icon-menu,
+    #icon-close {
+        display: none;
+    }
+
+}
+
+body {
+    position: relative;
+}
+
+@media screen and (max-width: 992px) {
+    .navigation-menu-list {
+        display: none;
+        position: absolute;
+        background-color: var(--clr-neutral-300);
+        width: 80%;
+        height: 100%;
+        top: -1rem;
+        left: 20%;
+        padding-top: 6rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .navigation-menu-list {
+        display: flex;
+    }
+
+}
+
+.hero {
+    background-image: url(./assets/images/image-web-3-mobile.jpg);
+    min-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.main-content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 50em) {
+    .hero {
+        background-image: url(./assets/images/image-web-3-desktop.jpg);
+    }
+
+    .main-content {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .main-content:nth-child(1) {
+        flex-basis: calc(60%+2rem);
+    }
+
+    .main-content:nth-child(2) {
+        flex-basis: 30%;
+    }
+}
+
+.main-article {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+@media screen and (min-width:50em) {
+    .main-article {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 2rem;
+    }
+
+    .main-article>* {
+        flex-basis: calc(50%-1rem);
+    }
+
+    .main-article h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+    }
+}
+
+.read-more {
+    width: fit-content;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 30px;
+    letter-spacing: .3rem;
+    font-size: .9rem;
+
+    cursor: pointer;
+}
+
+.new {
+    font-size: 2rem;
+}
+
+.side-articles-container {
+    padding: 2rem;
+}
+
+.side-articles-container .side-article:not(:last-child) {
+    border-bottom: 1px solid var(--clr-neutral-400);
+}
+
+.side-article {
+    padding-block: 1rem;
+}
+
+.side-article h3 {
+    padding-block: 1rem;
+    color: var(--clr-neutral-300);
+
+    cursor: pointer;
+}
+
+.side-article p {
+    color: var(--clr-neutral-400);
+}
+
+.footer-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 50em) {
+    .footer-articles {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.footer-article {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-article-content {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.footer-article-content span {
+    color: var(--clr-neutral-400);
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+}
+
+.footer-article-image {
+    width: 40%;
+}
+
+.footer-article-image img {
+    object-fit: fill;
+}
+
+.read-more:is(:hover, :focus-visible) {
+    background-color: var(--clr-neutral-600);
+    color: var(--clr-neutral-300);
+}
+
+.side-article h3:hover {
+    color: var(--clr-primary-300);
+}
