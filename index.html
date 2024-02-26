@@ -4,115 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
+  <meta name="description" content="A news website homepage">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+  </noscript>
+  <link rel="stylesheet" href="scss/main.css">
+  <script src="./navigation.js" defer></script>
   <title>Frontend Mentor | News homepage</title>
 </head>
 
-<body>
+<body class="wrapper">
 
-  <header>
-    <div class="logo">
-      <a href="#" class="">
-        <img src="./assets/images/logo.svg" alt="">
-      </a>
+  <header class="header">
+    <div class="header__logo">
+      <img src="./assets/images/logo.svg" alt="">
     </div>
-    <nav class="navigation-menu">
-      <img src="./assets/images/icon-menu.svg" id="icon-menu" alt="">
-      <ul class="navigation-menu-list clr-dark-gray-blue" id="navigation-menu-list">
-        <img src="./assets/images/icon-menu-close.svg" id="icon-close" alt="">
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
+    <nav class="navigation" aria-labelledby="primary-nav" role="navigation" id="navigation">
+      <p id="primary-nav" hidden>Primary navigation</p>
+      <ul class="navigation__list" id="navigation-menu-list">
+        <li class="navigation__link"><a href="#">Home</a></li>
+        <li class="navigation__link"><a href="#">New</a></li>
+        <li class="navigation__link"><a href="#">Popular</a></li>
+        <li class="navigation__link"><a href="#">Trending</a></li>
+        <li class="navigation__link"><a href="#">Categories</a></li>
       </ul>
     </nav>
+    <button class="navigation__hamburger" type="button" title="hamburger menu button"
+      aria-controls="navigation-menu-list" aria-expanded="false" id="hamburger-menu-button">
+      <div class="navigation__bar"></div>
+      <div class="navigation__bar"></div>
+      <div class="navigation__bar"></div>
+    </button>
   </header>
 
-  <main>
-    <div class="margin-block main-content">
-      <div class="">
-        <div class="hero">
+  <main class="main-grid-layout">
+    <h1 class="sr-only">News Page</h1>
+    <article class="main-article">
+      <h2 class="sr-only">Main article</h2>
+      <picture class="main-article__image">
+        <source media="(min-width: 643px)" srcset="./assets/images/image-web-3-desktop.jpg">
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="Colorful blocks and shapes">
+      </picture>
+      <section class="main-article__content">
+        <h2 class="main-article__heading">The Bright Future of Web 3.0?</h2>
+        <div class="main-article__text-container">
+          <p class="main-article__paragraphe">
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the
+            hands of
+            the
+            people.
+            But is it really fulfilling its promise?
+          </p>
+          <button class="main-article__read-more-btn">Read more</button>
         </div>
-        <div class="main-article">
-          <h1 class="fw-extra-bold">The Bright Future of Web 3.0?</h1>
-          <div class="flex column space-between">
-            <p class="clr-dark-gray-blue">
-              We dive into the next evolution of the web that claims to put the power of the platforms back into the
-              hands of
-              the
-              people.
-              But is it really fulfilling its promise?
-            </p>
-            <button class="read-more | fw-bold clr-white bg-orange">Read more</button>
-          </div>
-        </div>
+      </section>
+    </article>
+    <aside class="new-articles">
+      <h2 class="sr-only">
+        New articles
+      </h2>
+      <h2 class="new-articles__heading">New</h2>
+      <div class="new-articles__container">
+        <section class="new-article">
+          <a href="#" class="new-article__link-title">
+            <h3>Hydrogen VS Electric Cars</h3>
+          </a>
+          <p class="new-article__paragraph">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </section>
+        <section class="new-article">
+          <a href="#" class="new-article__link-title">
+            <h3>The Downsides of AI Artistry</h3>
+          </a>
+          <p class="new-article__paragraph">What are the possible adverse effects of on-demand AI image generation?</p>
+        </section>
+        <section class="new-article">
+          <a href="#" class="new-article__link-title">
+            <h3>Is VC Funding Drying Up?</h3>
+          </a>
+          <p class="new-article__paragraph">Private funding by VC firms is down 50% YOY. We take a look at what that
+            means.</p>
+        </section>
       </div>
-      <div class="side-articles-container bg-dark">
-        <h2 class="new | clr-yellow">New</h2>
-        <div class="side-article">
-          <h3>Hydrogen VS Electric Cars</h3>
-          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-        </div>
-        <div class="side-article">
-          <h3>The Downsides of AI Artistry</h3>
-          <p>What are the possible adverse effects of on-demand AI image generation?</p>
-        </div>
-        <div class="side-article">
-          <h3>Is VC Funding Drying Up?</h3>
-          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-articles">
-      <div class="footer-article">
-        <div class="footer-article-image">
+    </aside>
+    <section class="top-articles-recommendations">
+      <h2 class="sr-only">Top recommended articles</h2>
+      <div class="recommended-article">
+        <div class="recommended-article__image">
           <img src="./assets/images/image-retro-pcs.jpg" alt="">
         </div>
-        <div class="footer-article-content">
-          <span>01</span>
-          <h3>Reviving Retro PCs</h3>
-          <p>What happens when old PCs are given modern upgrades?</p>
+        <div class="recommended-article__content">
+          <h3 class="recommended-article__rank">01</h3>
+          <a href="#" class="recommended-article__link-title">
+            <h4>Reviving Retro PCs</h4>
+          </a>
+          <p class="recommended-article__paragraph">What happens when old PCs are given modern upgrades?</p>
         </div>
       </div>
-      <div class="footer-article">
-        <div class="footer-article-image">
+      <div class="recommended-article">
+        <div class="recommended-article__image">
           <img src="./assets/images/image-top-laptops.jpg" alt="">
         </div>
-        <div class="footer-article-content">
-          <span>02</span>
-          <h3>Top 10 Laptops of 2022</h3>
-          <p>Our best picks for various needs and budgets.</p>
+        <div class="recommended-article__content">
+          <h3 class="recommended-article__rank">02</h3>
+          <a href="#" class="recommended-article__link-title">
+            <h4>Top 10 Laptops of 2022</h4>
+          </a>
+          <p class="recommended-article__paragraph">Our best picks for various needs and budgets.</p>
         </div>
       </div>
-      <div class="footer-article">
-        <div class="footer-article-image">
+      <div class="recommended-article">
+        <div class="recommended-article__image">
           <img src="./assets/images/image-gaming-growth.jpg" alt="">
         </div>
-        <div class="footer-article-content">
-          <span>03</span>
-          <h3>The Growth of Gaming</h3>
-          <p>How the pandemic has sparked fresh opportunities.</p>
+        <div class="recommended-article__content">
+          <h3 class="recommended-article__rank">03</h3>
+          <a href="#" class="recommended-article__link-title">
+            <h4>The Growth of Gaming</h4>
+          </a>
+          <p class="recommended-article__paragraph">How the pandemic has sparked fresh opportunities.</p>
         </div>
       </div>
-    </div>
+    </section>
   </main>
-  <script>
-    const btnMenu = document.getElementById('icon-menu')
-    const navigationMenuList = document.getElementById('navigation-menu-list')
-    const btnClose = document.getElementById('icon-close')
-
-    btnMenu.addEventListener('click', () => {
-      navigationMenuList.style.display = 'flex'
-    })
-    btnClose.addEventListener('click', () => {
-      navigationMenuList.style.display = 'none'
-    })
-  </script>
 </body>
 
 </html>
