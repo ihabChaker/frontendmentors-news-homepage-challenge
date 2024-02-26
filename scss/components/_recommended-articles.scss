@@ -1,0 +1,32 @@
+.top-articles-recommendations {
+    grid-area: recommendations;
+    display: grid;
+    row-gap: $row-gap;
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: $column-gap;
+    }
+}
+.recommended-article {
+    display: flex;
+    gap: calc(0.7 * $column-gap);
+}
+.recommended-article__image {
+    max-width: 10rem;
+    height: 127px;
+}
+.recommended-article__image img {
+    object-fit: cover;
+}
+.recommended-article__rank {
+    color: $grayish-blue;
+}
+.recommended-article__link-title {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1rem;
+}
+.recommended-article__paragraph {
+    color: $dark-grayish-blue;
+}

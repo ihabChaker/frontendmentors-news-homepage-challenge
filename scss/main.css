@@ -64,14 +64,69 @@ h6 {
 
 html {
   font-family: "Inter", "sans-serif";
+  color: hsl(240, 100%, 5%);
 }
 
 .navigation__link {
   font-size: 1.6rem;
 }
 
+.main-article__heading {
+  font-weight: 800;
+  line-height: 0.9;
+  font-size: 4rem;
+}
+@media screen and (min-width: 640px) {
+  .main-article__heading {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .main-article__heading {
+    font-size: 6rem;
+  }
+}
+
+.main-article__paragraph {
+  font-size: 1.5rem;
+}
+
+.main-article__read-more-btn {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+}
+
+.new-articles__heading {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.new-article__link-title {
+  font-size: 1.8rem;
+}
+
+.new-article__paragraph {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.recommended-article__rank {
+  font-size: 3rem;
+}
+
+.recommended-article__link-title {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+.recommended-article__paragraph {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
 .wrapper {
-  padding: 0;
+  padding: 2rem;
   padding-top: 1rem;
   margin: 0 auto;
 }
@@ -82,18 +137,34 @@ html {
 }
 @media screen and (min-width: 800px) {
   .wrapper {
+    padding: 0;
     padding-top: 4rem;
+    padding-bottom: 2rem;
   }
 }
 
 .main-grid-layout {
   display: grid;
   grid-template-areas: "main" "aside" "recommendations";
-  gap: 3rem;
+  row-gap: 3rem;
+  column-gap: 3rem;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 640px) {
+  .main-grid-layout {
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .main-grid-layout {
+    margin-top: 4rem;
+  }
 }
 @media screen and (min-width: 1100px) {
   .main-grid-layout {
     grid-template-areas: "main main aside" "recommendations recommendations recommendations";
+    margin-top: 5rem;
+    row-gap: 5.5rem;
   }
 }
 
@@ -107,6 +178,14 @@ html {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.main-article__read-more-btn {
+  border: none;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  text-transform: uppercase;
+  padding: 15px 30px;
 }
 
 .header {
@@ -136,7 +215,7 @@ html {
 }
 @media screen and (min-width: 800px) {
   .header__logo {
-    max-width: 56px;
+    max-width: 64px;
   }
 }
 
@@ -219,6 +298,117 @@ html {
 .navigation__hamburger.active :nth-child(3) {
   transition: all 0.7s;
   transform: translateY(-5px) rotate(-45deg);
+}
+
+.main-article {
+  grid-area: main;
+}
+
+.main-article__content {
+  display: grid;
+}
+@media screen and (min-width: 800px) {
+  .main-article__content {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+}
+
+.main-article__image {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .main-article__image {
+    margin-bottom: 4rem;
+  }
+}
+
+.main-article__paragraph {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .main-article__paragraph {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-article__heading {
+    margin-bottom: 2rem;
+  }
+}
+
+.new-articles {
+  grid-area: aside;
+  background-color: hsl(240, 100%, 5%);
+  padding: 2.3rem;
+}
+
+.new-articles__heading {
+  color: hsl(35, 77%, 62%);
+  margin-bottom: 2rem;
+}
+
+.new-article__link-title {
+  text-decoration: none;
+  color: hsl(233, 8%, 79%);
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.new-article__paragraph {
+  color: hsl(236, 13%, 42%);
+  margin-bottom: 3rem;
+}
+
+.new-articles .new-article {
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.new-articles .new-article:last-child {
+  border: none;
+}
+
+.top-articles-recommendations {
+  grid-area: recommendations;
+  display: grid;
+  row-gap: 3rem;
+}
+@media screen and (min-width: 800px) {
+  .top-articles-recommendations {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
+
+.recommended-article {
+  display: flex;
+  gap: 2.1rem;
+}
+
+.recommended-article__image {
+  max-width: 10rem;
+  height: 127px;
+}
+
+.recommended-article__image img {
+  object-fit: cover;
+}
+
+.recommended-article__rank {
+  color: hsl(233, 8%, 79%);
+}
+
+.recommended-article__link-title {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.recommended-article__paragraph {
+  color: hsl(236, 13%, 42%);
 }
 
 /*# sourceMappingURL=main.css.map */

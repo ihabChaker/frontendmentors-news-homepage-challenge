@@ -1,0 +1,27 @@
+.new-articles {
+    grid-area: aside;
+    background-color: $very-dark-blue;
+    padding: 2.3rem;
+}
+.new-articles__heading {
+    color: $soft-orange;
+    margin-bottom: 2rem;
+}
+.new-article__link-title {
+    text-decoration: none;
+    color: $grayish-blue;
+
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+.new-article__paragraph {
+    color: $dark-grayish-blue;
+    margin-bottom: 3rem;
+}
+.new-articles .new-article {
+    border-bottom: 1px solid $dark-grayish-blue;
+}
+.new-articles .new-article:last-child {
+    border: none;
+}

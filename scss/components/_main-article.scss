@@ -1,0 +1,29 @@
+.main-article {
+    grid-area: main;
+}
+.main-article__content {
+    display: grid;
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $column-gap;
+    }
+}
+.main-article__image {
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 800px) {
+        margin-bottom: 4rem;
+    }
+}
+.main-article__paragraph {
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 800px) {
+        margin-bottom: 4rem;
+    }
+}
+.main-article__heading {
+    @media screen and (max-width: 800px) {
+        margin-bottom: 2rem;
+    }
+}
